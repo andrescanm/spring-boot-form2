@@ -1,4 +1,4 @@
-package com.capirona.springboot.form.app.controllers;
+package com.capirona.springboot.app.form.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
