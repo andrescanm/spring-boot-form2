@@ -17,13 +17,15 @@ import com.capirona.springboot.app.form.models.domain.Usuario;
 public class FormController {
 	@GetMapping("/form")
 	public String form(Model model) {
-		model.addAttribute("titulo", "Form Usuarios");
+		Usuario usuario = new Usuario();
+		model.addAttribute("titulo", "Formulario Usuarios");
+		model.addAttribute("usuario", usuario);
 		return "form";
 	}
 
 	@PostMapping("/form")
 	public String procesar(@Valid Usuario usuario, BindingResult result,Model model) {
-		model.addAttribute("titulo", "Resultado Form");
+		model.addAttribute("titulo", "Resultado Formulario Usuarios");
 		if(result.hasErrors()) {
 			Map<String, String> errores = new HashMap<>();
 			result.getFieldErrors().forEach(err->{
