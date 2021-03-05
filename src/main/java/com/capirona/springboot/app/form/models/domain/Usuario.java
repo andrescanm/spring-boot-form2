@@ -6,9 +6,9 @@ import javax.validation.constraints.Size;
 
 public class Usuario {
 	private String identificador;
-	@NotEmpty
+	@NotEmpty(message = "El nombre no puede estar vacío!")
 	private String nombre;
-	@NotEmpty
+	@NotEmpty(message = "Por favor ingrese el apellido...")
 	private String apellido;
 	@NotEmpty
 	@Size(min = 3, max = 8)
