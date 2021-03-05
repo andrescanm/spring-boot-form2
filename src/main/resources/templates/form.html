@@ -13,21 +13,21 @@
 		<div>
 			<input type="text" id="username" th:field="*{username}">
 		</div>
-		<div style="color: red;" th:if="${error != null && error.containsKey('username')}" th:text="${error.username}"></div>
+		<div style="color: red;" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
 		<div>
 			<label for="password">Password:</label>
 		</div>
 		<div>
 			<input type="password" id="password" th:field="*{password}">
 		</div>
-		<div style="color: red;" th:if="${error != null && error.containsKey('password')}" th:text="${error.password}"></div>
+		<div style="color: red;" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
 		<div>
 			<label for="email">Email:</label>
 		</div>
 		<div>
 			<input type="email" name="email" id="email" th:field="*{email}">
 		</div>
-		<div style="color: red;" th:if="${error != null && error.containsKey('email')}" th:text="${error.email}"></div>
+		<div style="color: red;" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 		<div>
 			<input type="submit" value="Enviar">
 		</div>
